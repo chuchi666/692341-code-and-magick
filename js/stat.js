@@ -17,17 +17,6 @@ var renderCloud = function (ctx, x, y, color) {
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxElement = function (arr) {
-  var maxElement = arr [0];
-
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] > maxElement) {
-      maxElement = arr[i];
-    }
-  }
-  return maxElement;
-};
-
 var getRandomBlue = function () {
   var alpha = 0.1 + Math.random() * 0.9;
   return 'rgba(0, 0, 255, ' + alpha + ')';
@@ -45,7 +34,7 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.fillText('Список результатов:', CLOUD_X + CLOUD_WIDTH / 3,
       CLOUD_Y + GAP * 2 + TEXT_HEIGHT);
 
-  var maxTime = getMaxElement(times);
+  var maxTime = Math.max.apply(null, times);
   var barsAmount = players.length < times.length ?
     players.length : times.length;
 
