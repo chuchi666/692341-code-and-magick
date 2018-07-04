@@ -120,17 +120,14 @@ var wizardFireball = document.querySelector('.setup-fireball-wrap');
 
 var onCoatClick = function () {
   wizardCoat.style.fill = getRandElement(COAT_COLOR);
-  return wizardCoat;
 };
 
 var onEyesClick = function () {
   wizardEyes.setAttribute('style', 'fill: ' + getRandElement(EYES_COLOR));
-  return wizardEyes;
 };
 
 var onFireballClick = function () {
   wizardFireball.setAttribute('style', 'background-color: ' + getRandElement(FIREBALL_COLOR));
-  return wizardFireball;
 };
 
 wizardCoat.addEventListener('click', onCoatClick);
